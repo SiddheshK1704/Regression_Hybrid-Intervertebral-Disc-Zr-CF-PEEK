@@ -3,10 +3,12 @@ from src.train_model import train_model
 from src.evaluate_model import evaluate_model
 from src.visualize import plot_results
 from src.predict import predict_values
+from src.eda import perform_eda
 
 def main():
     # Step 1
     generate_dataset()
+    perform_eda() 
 
     # Step 2
     X_test, y_test, model = train_model()
