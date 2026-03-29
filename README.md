@@ -86,7 +86,7 @@ Save plots and metrics
 
 ---
 
-##📊 Dataset Details
+## 📊 Dataset Details
 
 The dataset is synthetically generated using engineering-informed relationships:
 
@@ -99,7 +99,7 @@ Noise is added to simulate real-world FEA variations.
 ---
 
 
-##🌲 Machine Learning Model
+## 🌲 Machine Learning Model
 Algorithm: Random Forest Regressor
 Type: Multi-output regression
 Features:
@@ -109,7 +109,7 @@ Requires minimal tuning
 
 ---
 
-##📈 Outputs
+## 📈 Outputs
 Metrics:
 R² Score
 Mean Squared Error (MSE)
@@ -119,7 +119,7 @@ Feature importance analysis
 
 ---
 
-##🧠 Key Concept: Surrogate Modeling
+## 🧠 Key Concept: Surrogate Modeling
 
 This project demonstrates surrogate modeling, where:
 
@@ -132,7 +132,7 @@ Enables optimization workflows
 
 ---
 
-##🚀 Future Work
+## 🚀 Future Work
 Integrate real FEA simulation data
 Hyperparameter tuning
 Add optimization algorithms (Genetic Algorithm / Bayesian Optimization)
@@ -141,7 +141,7 @@ Expand inputs (material properties, geometry variations)
 
 ---
 
-##📚 Applications
+## 📚 Applications
 Biomedical implant design
 Spine biomechanics research
 Simulation acceleration
@@ -150,7 +150,7 @@ AI-driven engineering optimization
 ---
 
 
-##⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 This dataset is synthetically generated and does not replace actual FEA simulations. It is intended for academic and demonstration purposes only.
 
