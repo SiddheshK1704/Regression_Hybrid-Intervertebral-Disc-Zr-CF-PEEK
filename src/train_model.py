@@ -12,7 +12,13 @@ def train_model(data_path="data/fea_dataset.csv", model_path="models/random_fore
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    model = RandomForestRegressor(n_estimators=200, random_state=42)
+    model = RandomForestRegressor(
+    n_estimators=500,
+    max_depth=12,
+    min_samples_split=4,
+    min_samples_leaf=2,
+    random_state=42
+    )
     model.fit(X_train, y_train)
 
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
