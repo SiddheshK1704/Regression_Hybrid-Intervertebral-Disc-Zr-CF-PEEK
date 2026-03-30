@@ -5,34 +5,30 @@ import os
 def generate_dataset(n_samples=400, save_path="data/fea_dataset.csv"):
     np.random.seed(42)
 
-    # Input ranges
-    load = np.random.uniform(500, 2000, n_samples)
-    moment = np.random.uniform(6, 10, n_samples)
+    # ✅ Integer inputs
+    load = np.random.randint(500, 2001, n_samples)   # 500 to 2000 (inclusive)
+    moment = np.random.randint(6, 11, n_samples)     # 6 to 10 (inclusive)
 
-    # Normalize inputs (for smooth interpolation)
+    # Normalize for interpolation
     load_norm = (load - 500) / (2000 - 500)
     moment_norm = (moment - 6) / (10 - 6)
 
     # -------------------------------
-    # Outputs (INTERPOLATED + NOISE)
+    # Outputs (based on your FEA anchors)
     # -------------------------------
 
-    # Deformation (0.25 → 1.02)
     deformation = (
         0.25 + 0.75 * load_norm + 0.05 * moment_norm
     ) + np.random.normal(0, 0.015, n_samples)
 
-    # Equivalent Stress (22 → 92)
     eq_stress = (
         22 + 70 * load_norm + 3 * moment_norm
     ) + np.random.normal(0, 2, n_samples)
 
-    # Max Principal Stress (12.5 → 49)
     max_principal = (
         12.5 + 36 * load_norm + 2 * moment_norm
     ) + np.random.normal(0, 1.5, n_samples)
 
-    # Shear Stress (4 → 18)
     shear_stress = (
         4 + 12 * load_norm + 3 * moment_norm
     ) + np.random.normal(0, 1, n_samples)
@@ -49,7 +45,9 @@ def generate_dataset(n_samples=400, save_path="data/fea_dataset.csv"):
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
     df.to_csv(save_path, index=False)
 
-    print("✅ Dataset generated using real FEA anchor interpolation")
+    print("✅ Dataset generated with INTEGER inputs")
+    print(f"Saved at: {save_path}")
+
 
 if __name__ == "__main__":
     generate_dataset()
