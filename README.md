@@ -156,5 +156,5 @@ This dataset is synthetically generated and does not replace actual FEA simulati
 
 ---
 
-##👨‍💻 Author
+👨‍💻 Author
 Siddhesh Khankhoje
